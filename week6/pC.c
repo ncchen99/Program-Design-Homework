@@ -28,30 +28,38 @@ int main() {
     for (int t = 0; n - ((0.5 * 9.8) * t * t) > 0;
          printf("%.1f\n", n - (0.5 * 9.8) * t * t),
              t++) {
-        //          .oo.
-        //         HHHHHb.
-        //        /`HHHHHHb    TO ALL STRIPPERS EVERYWHERE: FAST AND
-        //        > `dHHHHH     ERRATIC MOVEMENTS ARE DISTRACTING OR
-        //       /  dHHHHHHb     CONFUSING AND NOT SEXY
-        //       :  HHHHHHHH
-        //      .-""FHHHHHHH   ALSO IF YOU COULD MANAGE TO PRETEND FOR
-        //      |   JHHHHHHH    A MOMENT THAT YOU'RE MOVING WITH THE
-        //      J    FHHHHHHb    RHYTHM OF THE MUSIC THAT'S A PLUS
-        //     + \   JHHHHHHH     (YES I'M TALKING TO YOU CHRISTINA MODEL)
-        //   .'   \   FHHHHHH+_
-        //   `. ;  \   \HHHHF "+   IN ADDITION A GRIMACE LIKE YOU'RE BEING
-        //     `|  _>   \HHF+_  \   ELECTROCUTED IS ALSO NOT ACCEPTABLE
-        //      F_+"   .'J   |  j
-        //     J+"   .': F   |  j  LOOK LADY MAKE PRETEND YOU'RE ENJOYING
-        //   _+"  _+'  : +_  |  F   IT OR AT LEAST NOT HOPPED UP ON CRANK
-        //  %" .-'       . =.F j     FOR TEN SECONDS HERE
-        // |  ;I          \  =./
-        // |  (`-.......___+___L   IF YOU DIDN'T WANT THIS JOB YOU SHOULD
-        //  ```='"""""==_  "_.--'   HAVE GOTTEN AN EDUCATION
-        //      |        `./   J
-        //      |        +' .' |
-        //      F       J      |
-        //      F      JF      F
-        //     J       F| KroggF
+        //                                             ,:
+        //                                           ,' |
+        //                                          /   :
+        //                                       --'   /
+        //                                       \/ />/
+        //                                       / <//_\                     
+//                                    __/   /
+        //                                    )'-. /
+        //                                    ./  :\                         
+//                                     /.' '
+        //                                   '/'
+        //                                   +
+        //                                  '
+        //                                `.
+        //                            .-"-     HANDS UP !!!!
+        //                           (    |
+        //                        . .-'  '.    WHO FINDS GANG BANG PORN HOT
+        //                       ( (.   )8:
+        //                   .'    / (_  )
+        //                    _. :(.   )8P  `
+        //                .  (  `-' (  `.   .
+        //                 .  :  (   .a8a)
+        //                /_`( "a `a. )"'
+        //            (  (/  .  ' )=='
+        //           (   (    )  .8"   +
+        //             (`'8a.( _(   (
+        //          ..-. `8P    ) `  )  +
+        //        -'   (      -ab:  )
+        //      '    _  `    (8P"Ya
+        //    _(    (    )b  -`.  ) +
+        //   ( 8)  ( _.aP" _a   \( \   *
+        // +  )/    (8P   (88    )  )
+        //    (a:f   "     `"       `
     }
 }
