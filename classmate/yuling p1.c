@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 int main() {
-    long long int w, i, j, k;
+    int w, i, j, k;
     long long int sum = 0;
     __uint128_t a = 1, b = 1;  //a和b是做階層的
     scanf("%lld", &w);

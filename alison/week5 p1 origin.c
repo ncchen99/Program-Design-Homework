@@ -2,7 +2,6 @@
 #include <stlib.h>
 int main() {
     int i, min, max;
-    min();
     int a[i];
     scanf("%d", &a[0]);
     min = max = a[0];
