@@ -34,3 +34,10 @@ void alpha_composite(unsigned int image[][SIZE], unsigned int width, unsigned in
         }
     }
 }
+void alpha_composite(unsigned int image[][SIZE], unsigned int width, unsigned int height, float alpha, int background_color) {
+    for (int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
+            image[i][j] = (alpha * (image[i][j] - background_color) + background_color);
+        }
+    }
+}
