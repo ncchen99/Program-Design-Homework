@@ -24,7 +24,8 @@ int fa(int n) {
 }
 
 int32_t main() {
-    ull m, n;
+    long long m, n;
+    __uint128_t a;
     scanf("%lld%lld", &m, &n);
-    printf("%s", sprintf_int128(m - n ? fa(m) / (fa(n) * fa(m - n)) : 1));
+    printf("%lld", (long long)a);
 }
