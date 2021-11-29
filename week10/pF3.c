@@ -6,8 +6,8 @@ int cnt[105] = {0};
 int ans;
 
 int dfs(int s, int t) {
-    if (t > 6)
-        return nums[5];
+    if (t > 8)
+        return nums[33];
     if (s == n - 1)
         for (int i = 0; i < n; i++)
             if (cnt[nums[i]] > 0)
