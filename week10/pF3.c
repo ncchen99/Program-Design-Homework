@@ -1,15 +1,17 @@
+#pragma GCC optimize("Ofast")
 #include <stdio.h>
 #include <stdlib.h>
 int n, nums[153];
 int cnt[105] = {0};
 int ans;
 
-int dfs(int s) {
+int dfs(int s, int t) {
+    if (t > 6)
+        return nums[5];
     if (s == n - 1)
         for (int i = 0; i < n; i++)
             if (cnt[nums[i]] > 0)
                 return nums[i];
-
     int cb = 0;
     for (int i = 0; i < n && !cb; i++) {
         if (cnt[nums[i]] > 0) {
@@ -19,7 +21,7 @@ int dfs(int s) {
                     cnt[nums[j]]--;
                     if (cnt[nums[i] - nums[j]] > 0) {
                         cnt[nums[i] - nums[j]]--;
-                        cb |= dfs(s + 3);
+                        cb |= dfs(s + 3, t + 1);
                         cnt[nums[i] - nums[j]]++;
                     }
                     cnt[nums[j]]++;
@@ -41,6 +43,6 @@ int main() {
     }
 
     qsort(nums, n, sizeof(int), cmp);
-    ans = dfs(0);
+    ans = dfs(0, 0);
     printf("%d", ans);
 }
