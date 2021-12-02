@@ -41,7 +41,6 @@ int main() {
         scanf("%d", &nums[i]);
         cnt[nums[i]]++;
     }
-
     qsort(nums, n, sizeof(int), cmp);
     ans = dfs(0, 0);
     printf("%d", ans);
