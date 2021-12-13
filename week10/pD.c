@@ -29,19 +29,19 @@ short* calc(short a[], int len) {
 
     short* c = malloc(sizeof(short) * 200);
     for (i = 0;; i++) {
-        if (o[i] == -1)
+        if (e[i] == -1)
             break;
-        c[i] = o[i];
+        c[i] = e[i];
     }
     for (j = i;; j++) {
-        if (e[j - i] == -1)
+        if (o[j - i] == -1)
             break;
-        c[j] = e[j - i];
+        c[j] = o[j - i];
     }
     c[j] = -1;
+    return c;
     free(e);
     free(o);
-    return c;
 }
 int main() {
     short a[20000] = {}, i = 0, tmp = 0;
