@@ -77,6 +77,7 @@
         "variant": "cpp",
         "stdlib.h": "c",
         "string.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "CP.C": "cpp"
     }
 }
