@@ -20,35 +20,33 @@ int main() {
     }
 }
 int *report_card(int *s) {
-    int result1[1001] = {0}, result2[1001] = {0};
+    int result1[1010] = {0}, *result2 = malloc(sizeof(int) * 1010);
     int digit = 0, ini_digit = 0, sum = 0, sum_max = 0;
 
-    for (int k = 0; *(s + k) != -1; k++) {
-        while (*(s + k) != -1) {
-            if (*(s + k) >= 60) {
-                result1[digit++] = *(s + k);
-
-                if (*(s + k + 1) < 60) break;
-            }
-            k++;
+    for (int k = 0;;) {
+        while (s[k] >= 60) {
+            result1[digit++] = s[k++];
+            // printf("kk:%d\n", result1[digit - 1]);。
+            // for (int i = 0; i < digit; i++)
+            // printf("%d ", result1[i]);
         }
         result1[digit++] = -1;
 
-        for (int l = 0; l < digit; l++) {
+        for (int l = 0; l < digit - 1; l++) {
             sum += result1[l];
         }
-        if (sum >= sum_max && digit > ini_digit) {
+        // printf("sum:%d\n", sum);
+        if (sum >= sum_max) {
             sum_max = sum;
-            ini_digit = digit;
-
             for (int l = 0; l < digit; l++) {
                 result2[l] = result1[l];
             }
         }
-        for (int i = 0; i < digit; i++) result1[i] = 0;
         digit = 0, sum = 0;
+        if (s[k] == -1)
+            break;
+        else
+            k++;
     }
-    int *p = result2;
-
-    return p;
+    return result2;
 }

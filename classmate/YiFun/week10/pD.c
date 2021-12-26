@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 void decode(int num) {
     int sumOfEven = 0, sumOfOdd = 0;
     if (num < 16) {
@@ -13,6 +14,7 @@ void decode(int num) {
     decode(sumOfOdd);
     decode(sumOfEven);
 }
+
 int main() {
     int num, i = 1, sumOfEven = 0, sumOfOdd = 0;
     while (scanf("%1x", &num) != EOF)
