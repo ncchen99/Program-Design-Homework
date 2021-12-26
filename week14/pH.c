@@ -1,13 +1,17 @@
 #include <stdio.h>
 #include <string.h>
-int d, hp, at = 0, np = 0;
-char lc[3][100] = {"PATA PATA PATA PON", "PON PON PATA PON", "CHAKA CHAKA PATA PON"};
+int d, hp, at = 0, np = 0, ct = 0;
+char lc[3][1000] = {"PATA PATA PATA PON", "PON PON PATA PON", "CHAKA CHAKA PATA PON"};
 int op(char *c, int sp, int ep) {
-    char tmp[1000];
+    ct++;
+    char tmp[10000];
     strncpy(tmp, &c[sp], ep - sp);
     tmp[ep - sp] = '\0';
+    // printf("tmp: %s\n", tmp);
     for (int i = 0; i < 3; i++) {
         if (!strcmp(tmp, lc[i])) {
+            at++;
+            // printf("match: %s i: %d\n", tmp, i);
             if (i == 0) {
                 // moveforward
                 // printf("衝了!\n");
@@ -28,8 +32,7 @@ int op(char *c, int sp, int ep) {
                 // printf("退了!\n");
                 d++;
             }
-            at++;
-            if (at % 10 == 0 && at > 0 && i != 2)
+            if (ct % 10 == 0 && i != 2)
                 return -1;
             break;
         }
@@ -40,8 +43,8 @@ int op(char *c, int sp, int ep) {
 }
 int main() {
     scanf("%d%d\n", &d, &hp);
-    char c[100000], *dp = c, *cp = c;
-    fgets(c, 100000, stdin);
+    char c[1000000], *dp = c, *cp = c;
+    fgets(c, 1000000, stdin);
     c[strlen(c) - 1] = '\0';
     while (1) {
         dp = strchr(&(c[np]), '.');
@@ -50,7 +53,7 @@ int main() {
         cp = (cp != NULL ? cp : c + strlen(c));
         int r = op(c, np, (dp < cp ? dp - c : cp - c));
         if (r == 1)
-            printf("YES %d\n", at + 1);
+            printf("YES %d\n", at);
         if (r == -1)
             printf("NO %d\n", hp);
         if (r)
