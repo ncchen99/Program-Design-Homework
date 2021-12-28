@@ -8,11 +8,7 @@ typedef struct stu {
 } Stu;
 int cmp(const void* a, const void* b) {
     char *aa = ((Stu*)a)->m, *bb = ((Stu*)b)->m;
-    int ml = (strlen(aa) < strlen(bb) ? strlen(aa) : strlen(bb));
-    if (strncmp(aa, bb, ml) == 0)
-        return strlen(aa) - strlen(bb);
-    else
-        return strncmp(aa, bb, ml);
+    return strcmp(aa, bb);
 }
 int main() {
     Stu s[130];
