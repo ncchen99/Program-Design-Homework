@@ -16,15 +16,15 @@ int main() {
 
 void addition() {
     float a, b;
-    float* d = &a;
-    float* e = &b;
+    int* d = &a;
+    int* e = &b;
     scanf("%f%f", &a, &b);
     printf("   ");
     print_binary(&a);
     printf("\n+) ");
     print_binary(&b);
     printf("\n---------------------------------------\n   ");
-    int c = *((int*)d) + *(int*)e;
+    int c = *d + *e;
     print_binary(&c);
-    printf("\n%d + %d = %d", (int)d, (int)e, c);
+    printf("\n%d + %d = %d", (int)a, (int)b, c);
 }
