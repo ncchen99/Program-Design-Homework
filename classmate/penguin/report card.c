@@ -21,7 +21,6 @@ int main() {
 
 int *report_card(int *s) {
     int sum[1001] = {0}, c, number_max = 0, sum_max = 0;
-
     for (c = 0; s[c] != -1;) {
         if (s[c] < 60)
             s[c] = -1;

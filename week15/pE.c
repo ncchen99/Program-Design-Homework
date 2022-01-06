@@ -35,20 +35,22 @@ Location *parse_url(char *url) {
     i += 3;
     char *i2 = strstr(i, ":");
     if (i2 != NULL) {
+        i2 += 1;
         char ports[6] = "";
-        strncpy(ports, i2 + 1, strstr(i2, "/") - i2 - 1);
+        strncpy(ports, i2, strstr(i2, "/") - i2);
         // ports[strstr(i2, "/") - i2 - 1] = '\0';
         port = atoi(ports);
-        strncpy(host, i, i2 - i);
+        strncpy(host, i, i2 - i - 1);
         i2 += strstr(i2, "/") - i2;
         // host[i2 - i] = '\0';
         // printf("i2 - i:%ld, host:%s\n", i2 - i, host);
     } else {
-        i2 = ((strstr(i, "/") == NULL ? i + strlen(i) - 1 : strstr(i, "/")));
-        strncpy(host, i, i2 - i);
-        if (strstr(i, "/") == NULL) goto HDO;
+        i2 = ((strstr(i, "/") == NULL ? i + strlen(i) : strstr(i, "/") + 1));
+        strncpy(host, i, i2 - i - 1);
+        if (strstr(i, "/") == NULL)
+            goto HSO;
+        // printf("%s\n", host);
     }
-HDO:
     char *i3 = strstr(i2, "?");
     if (i3 != NULL) {
         i3 += 1;
@@ -57,22 +59,22 @@ HDO:
         if (i4 != NULL) {
             i4 += 1;
             strncpy(search, i3, i4 - i3 - 1);
-            char *i5 = url + strlen(url) - 1;
+            char *i5 = i + strlen(i);
             strncpy(hash, i4, i5 - i4 - 1);
         } else {
-            i4 = url + strlen(url) - 1;
-            strncpy(search, i3, i4 - i3);
+            i4 = i + strlen(i);
+            strncpy(search, i3, i4 - i3 - 1);
         }
     } else {
         i3 = strstr(i2, "#");
         if (i3 != NULL) {
             i3 += 1;
             strncpy(pathname, i2, i3 - i2 - 1);
-            char *i4 = url + strlen(url) - 1;
-            strncpy(hash, i3, i4 - i3);
+            char *i4 = url + strlen(url);
+            strncpy(hash, i3, i4 - i3 - 1);
         } else {
-            i3 = url + strlen(url) - 1;
-            strncpy(pathname, i2, i3 - i2);
+            i3 = i + strlen(i);
+            strncpy(pathname, i2, i3 - i2 - 1 < 0 ? 0 : i3 - i2 - 1);
         }
     }
 HSO:

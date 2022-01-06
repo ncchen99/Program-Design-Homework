@@ -6,7 +6,7 @@ int *report_card(int *s) {
         length++;  // length of score array
     }
     // now p is the address stores -1
-    int *q[1001], a[1001] = {};
+    int *q[1001], a[1001] = {0};
     // a[length] is used to distinguish whether the score is over 60 or not
     for (int i = 0; i < length; i++) {
         q[i] = s + i;
@@ -18,6 +18,7 @@ int *report_card(int *s) {
     //     printf("%d ", a[i]);
     // }
     // printf("\n");
+    
     int max1 = 0, max2 = 0, *comp, *initial;
 
     comp = s;

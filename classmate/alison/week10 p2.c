@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-int between(int *a, int *b) {
+int between(int* a, int* b) {
     int sum = 0;
-    for (int *i = a; i < b; i++) {
+    for (int* i = a; i < b; i++) {
         sum += *i;
     }
     return sum;
