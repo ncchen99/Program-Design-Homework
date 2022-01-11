@@ -5,5 +5,5 @@ int main() {
     gets(k);
     gets(p);
     for (int i = 0; i < strlen(p); i++) 
-        printf("%c", k[i % strlen(k)] ^ p[i]); 
+        printf("%c", k[i % strlen(k)] ^ p[i]);
 }
