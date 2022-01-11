@@ -8,8 +8,7 @@ void strins(char *P, char *s, char *t);
 int main() {
     char P[MAX_LEN_P + 1], s[MAX_LEN_S + 2], t[MAX_LEN_S + 2];
     size_t P_len = 0;
-    for (char buf[MAX_LEN_P + 1] = ""; strcmp(buf, "---\n");
-         fgets(buf, MAX_LEN_P + 1, stdin)) {
+    for (char buf[MAX_LEN_P + 1] = ""; strcmp(buf, "---\n"); fgets(buf, MAX_LEN_P + 1, stdin)) {
         size_t len = strlen(buf);
         if (len + P_len > MAX_LEN_P) {
             fprintf(stderr, "The length of the paragraph exceeds %d\n", MAX_LEN_P);
@@ -28,14 +27,23 @@ int main() {
 }
 void strins(char *P, char *s, char *t) {
     char tem[MAX_LEN_P];
-    for (int i = 0; P[0] != '\0';) {
-        if (!strncmp(P, s, strlen(s))) {
-            P += strlen(s);
-            strcpy(tem, P);
-            P[0] = '\0';
-            strcat(P, t);
-            P += strlen(t);
-            strcat(P, tem);
+    for (int i = 0; P[i] == '\0'; i++) {
+        if (*P == *s) {
+            if (*(s + 1) == '\0') {
+                for (; *P != '\0'; P++) {
+                    tem[i] = *P;
+                }
+                strcat(P, t);
+                strcat(t, tem);
+                s = &s[0];
+                P = P + strlen(t);
+                for (int j = 0; j < MAX_LEN_P; j++) {
+                    tem[j] = 0;
+                }
+            } else {
+                P++;
+                s++;
+            }
         } else {
             P++;
         }

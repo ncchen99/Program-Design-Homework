@@ -18,7 +18,12 @@ int main() {
     }
     for (int i = 0, std_num_tmp = std_num; i < std_num_tmp - 1;) {
         char ta[100] = {}, tb[100] = {};
-        for (int j = 0; j < (strlen(std[i]) > strlen(std[i + 1]) ? strlen(std[i]) : strlen(std[i + 1])); j++) {
+        int maxlen = 0;
+        if (strlen(std[i]) > strlen(std[i + 1]))
+            maxlen = strlen(std[i]);
+        else
+            maxlen = strlen(std[i + 1]);
+        for (int j = 0; j < maxlen; j++) {
             ta[j] = tolower(std[i][j]);
             tb[j] = tolower(std[i + 1][j]);
         }
