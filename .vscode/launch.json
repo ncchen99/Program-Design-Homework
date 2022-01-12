@@ -24,7 +24,8 @@
                 }
             ],
             "preLaunchTask": "C/C++: gcc 建置使用中檔案",
-            "miDebuggerPath": "/usr/bin/gdb"
+            "miDebuggerPath": "/usr/bin/gdb",
+            "sourceFileMap":{"/build/glibc-eX1tMB":"/usr/src/glibc"}
         }
     ]
 }
