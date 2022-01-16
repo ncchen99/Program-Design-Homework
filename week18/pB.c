@@ -1,18 +1,18 @@
 #include <stdint.h>
 #include <stdio.h>
 
-int bingo(unsigned char[]);
+int bingo(uint16_t num[]);
 
 int main() {
-    unsigned char num[8];
+    uint16_t num[8];
     for (int i = 0; i < 8; ++i) {
-        scanf("%hhu", &num[i]);
+        scanf("%hu", &num[i]);
     }
 
     printf("%d\n", bingo(num));
 }
 
-int bingo(unsigned char num[]) {
+int bingo(uint16_t num[]) {
     //     for (int i = 0; i < 8; i++, printf("\n"))
     //         for (int j = 0; j < 8; j++)
     //             printf("%d", (num[i] >> j) & 1);

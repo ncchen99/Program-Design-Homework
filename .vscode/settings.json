@@ -79,6 +79,7 @@
         "string.h": "c",
         "stdio.h": "c",
         "CP.C": "cpp",
-        "mirror.h": "c"
+        "mirror.h": "c",
+        "TMP.C": "cpp"
     }
 }
