@@ -33,7 +33,6 @@ int pull_radish(int *l, int *r, int *pos, int x) {
     while (pos >= l) {
         *pos = 0;
         pos -= x;
-        // fewfjewifie
         ans++;
     }
     posbk += x;
