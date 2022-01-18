@@ -21,6 +21,7 @@ int bingo(uint16_t num[]) {
             // printf("%d", (num[i] >> j) & 1);
             num_tem[i][j] = (num[i] >> j) & 1;
     }
+
     /* horizontal */
     for (int i = 0; i < 8; i++)
         if (num[i] == 255)
