@@ -53,17 +53,13 @@ struct node *read_data(int *size) {
     struct node *mat = malloc(1005);
     int i = 0;
     for (i = 0; scanf("%d ->", &(mat[i].id)) != EOF; i++) {
-        // printf("ha[i].num:%d", ha[i].num);
         int j, tmp;
         struct node *now = &mat[i];
-        // memset(ha[i].arr, 0, 1000);
         scanf("%d", &tmp);
-        // printf("%d ", tmp);
         for (j = 0; tmp != 0; j++) {
             now->next = malloc(sizeof(struct node));
             now = now->next;
             now->id = tmp;
-            // printf("%d ", tmp);
             scanf("%d", &tmp);
         }
         now->next = NULL;
