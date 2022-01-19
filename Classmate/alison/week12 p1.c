@@ -1,12 +1,17 @@
 #include <stdio.h>
 #include <string.h>
 char *mystrcat(char *dest, char *src) {
-    strcat(dest, src);
+    for (char *c = dest + strlen(dest), *b = src; *b != '\0'; b++, c++)
+        *c = *b;
+    dest[strlen(dest) + strlen(src)] = '\0';
     return dest;
 }
 
 char *mystrncat(char *dest, char *src, int n) {
-    strncat(dest, src, n);
+    int i = 0;
+    for (char *c = dest + strlen(dest), *b = src; i < n && *b != '\0'; b++, c++, i++)
+        *c = *b;
+    dest[strlen(dest) + n] = '\0';
     return dest;
 }
 
