@@ -7,31 +7,19 @@ struct card {
 };
 
 int main() {
-    struct card top, cur, prev;
-    int n, m;
-    scanf("%d%d", &n, &m);
+    struct card *cur = malloc(sizeof(struct card)), *top = cur, *last;
+    int n, op;
+    scanf("%d%d", &n, &op);
     for (int i = 0; i < n; i++) {
-        cur.v = i + 1;
-        if (!top) {
-            top = cur;
-        } else {
-            prev->next = cur;
-        }
-        prev = cur;
+        cur->next = malloc(sizeof(struct card));
+        cur->v = i + 1;
+        cur = (i == n - 1 ? cur : cur->next);
     }
-    for (int j = 0; j < m; j++) {
-        if (!(j & 1)) {
-            printf("%d", top->v);
-            top = top->next;
-        } else {
-            struct card* toptmp = top;
-            for (cur = top; cur->next != NULL; cur = cur->next) {
-            }
-            cur->next = toptmp;
-            toptmp->next = NULL;
-            top = top->next;
-        }
+    // cur 在這裡會成為最後一張有數字ㄉ排ㄉ位址
+    for (int i = 0; i < op; i++) {
+        printf("%d ", top->v);
+        cur->next = top->next;
+        cur = cur->next;
+        top = top->next->next;
     }
-    // for (cur = top; cur != NULL; cur = cur->next)
-    //     printf("value:%d", cur->v);
 }
