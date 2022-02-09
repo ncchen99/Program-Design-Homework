@@ -15,7 +15,7 @@ int main() {
         cur->v = i + 1;
         cur = (i == n - 1 ? cur : cur->next);
     }
-    // cur 在這裡會成為最後一張有數字ㄉ排ㄉ位址
+    // cur 在這裡會成為最後一張數字ㄉ排ㄉ位址
     for (int i = 0; i < op; i++) {
         printf("%d ", top->v);
         cur->next = top->next;
