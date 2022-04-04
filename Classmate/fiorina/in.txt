@@ -1,0 +1,6 @@
+InsertNode a 0
+InsertNode b 1
+InsertNode c 0
+InsertNode d 2
+InsertNode e 2
+PrintList
